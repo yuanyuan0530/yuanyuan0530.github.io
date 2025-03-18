@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Cocoa Kingdom For Princess Yuanyuan">
+    <meta name="keywords" content="标签: Light, Cocoa Kingdom For Princess Yuanyuan">
     <meta name="description" content="Cocoa Kingdom For Princess Yuanyuan">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,53 +17,12 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Cocoa Kingdom For Princess Yuanyuan</title>
+    <title>标签: Light | Cocoa Kingdom For Princess Yuanyuan</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
 
-    <!-- index cover -->
-    <!-- <link rel="stylesheet preload" type="text/css" href="/css/indexcover.css"> -->
-    <style>
-        .carousel-control {
-            width: 45px;
-            height: 45px;
-            line-height: 55px;
-            border-radius: 45px;
-            background: transparent;
-            cursor: pointer;
-            z-index: 100;
-        }
-        
-        #prev-cover {
-            position: absolute;
-            top: 48%;
-            left: 8px;
-        }
-        
-        #next-cover {
-            position: absolute;
-            top: 48%;
-            right: 8px;;
-        }
-        
-        #prev-cover i {
-            margin-right: 3px;
-        }
-        
-        #next-cover i {
-            margin-left: 3px;
-        }
-        
-        .carousel-control:hover {
-            background-color: rgba(0, 0, 0, .4);
-        }
-        
-        .carousel-control i {
-            color: #fff;
-            font-size: 2.4rem;
-        }
-    </style>
+    <!-- bg-cover style     -->
 
 
 
@@ -84,6 +43,10 @@
 
 
 
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
 
 
 
@@ -304,15 +267,9 @@
 
 </header>
 
-    
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item  white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
@@ -362,172 +319,72 @@
 </script>
 
 
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-                    <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fab fa-github-alt"></i>Github
-                    </a>
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:yuan0530forever@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=yuan0530forever" class="tooltipped" target="_blank" data-tooltip="QQ联系我: yuan0530forever" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
-</div>
-        </div>
     </div>
-
-    
 </div>
-
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
-
-
 
 <main class="content">
 
     
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;真实的梦境
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            很难讲清楚我们生活的这个世界，到底是真实的，还是梦境……——金基德《空房间》
+
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/Talks/" title="Talks: 12">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Talks" style="background-color: #F9EBEA;">Talks
+                        <span class="tag-length">12</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Light/" title="Light: 10">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="Light" style="background-color: #F5EEF8;">Light
+                        <span class="tag-length">10</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Dark/" title="Dark: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Dark" style="background-color: #D5F5E3;">Dark
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Date/" title="Date: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Date" style="background-color: #E8F8F5;">Date
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+            </div>
         </div>
     </div>
 </div>
 
-                    
-
-                    
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
     
 
-    
-
-    <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
-        <div class="row article-row">
+        <div class="row tags-posts">
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="Talks, Light, Dark" data-aos="fade-up">
                 <div class="card">
                     <a href="/2025/03/14/12-%E6%A2%A6%E7%9A%84%E9%99%80%E8%9E%BA/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="梦的陀螺">
@@ -535,13 +392,7 @@
                             <span class="card-title">梦的陀螺</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                梦结局之前有写过一篇关于梦结局的Report。是关于盗梦空间、Lost等的梦结局的想法。在盗梦空间的里主角通过陀螺在现实里会停，梦境里不会停来进行判断自己所处的位置。并在最后Happy end的结局里放了个不停旋转的陀螺。「不要在乎到底是梦
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2025-03-14
@@ -554,183 +405,14 @@
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Talks/">
-                            <span class="chip bg-color">Talks</span>
-                        </a>
-                        
-                        <a href="/tags/Light/">
-                            <span class="chip bg-color">Light</span>
-                        </a>
-                        
-                        <a href="/tags/Dark/">
-                            <span class="chip bg-color">Dark</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
-              <!-- 隐藏某个文章 -->
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2025/02/13/7-%E6%A2%A6%E7%9A%84%E8%A3%82%E7%97%95/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="梦的裂痕">
-                            
-                            <span class="card-title">梦的裂痕</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                世界上的一切事物都是注定的吗？“大二”梦就从最简单的2个字开始。
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-02-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Flora可可
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Talks/">
-                            <span class="chip bg-color">Talks</span>
-                        </a>
-                        
-                        <a href="/tags/Dark/">
-                            <span class="chip bg-color">Dark</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2025/02/13/8-%E6%A2%A6%E7%9A%84%E5%8A%A0%E9%80%9F/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="梦的裂痕">
-                            
-                            <span class="card-title">梦的裂痕</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                世界上的一切事物都是注定的吗？“大二”梦就从最简单的2个字开始。
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-02-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Flora可可
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Talks/">
-                            <span class="chip bg-color">Talks</span>
-                        </a>
-                        
-                        <a href="/tags/Dark/">
-                            <span class="chip bg-color">Dark</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2025/02/13/9-%E6%A2%A6%E7%9A%84%E5%8D%87%E5%8D%8E/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="梦的裂痕">
-                            
-                            <span class="card-title">梦的裂痕</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                世界上的一切事物都是注定的吗？“大二”梦就从最简单的2个字开始。
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-02-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Flora可可
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Talks/">
-                            <span class="chip bg-color">Talks</span>
-                        </a>
-                        
-                        <a href="/tags/Dark/">
-                            <span class="chip bg-color">Dark</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4" data-tags="Light, Date" data-aos="fade-up">
                 <div class="card">
                     <a href="/2025/01/04/2-%E6%A2%A6%E7%9A%84%E7%9B%B8%E9%81%87/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="梦的开始">
@@ -738,13 +420,7 @@
                             <span class="card-title">梦的开始</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                世界上的一切事物都是注定的吗？呆呆的骑士穿着厚重的盔甲，像根木头一样站在站牌下面骑士很迷茫，今天是第一次会见公主，公主她会不会觉得我太胖了，会不会觉得我说话怪怪的见到公主后，骑士紧张的说不出话公主她温婉如玉，聪慧外露，我真能当好一个骑士吗？
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2025-01-04
@@ -757,29 +433,14 @@
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Light/">
-                            <span class="chip bg-color">Light</span>
-                        </a>
-                        
-                        <a href="/tags/Date/">
-                            <span class="chip bg-color">Date</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
-              <!-- 隐藏某个文章 -->
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="Talks, Light" data-aos="fade-up">
                 <div class="card">
-                    <a href="/2024/12/24/1-%E6%A2%A6%E7%9A%84%E5%BC%80%E5%A7%8B/">
-                        <div class="card-image">
+                    <a href="/2024/12/24/6-%E6%A2%A6%E7%9A%84%E7%BA%A0%E7%BC%A0/">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="梦的开始">
@@ -787,14 +448,7 @@
                             <span class="card-title">梦的开始</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                世界上的一切事物都是注定的吗？“大二”梦就从最简单的2个字开始。“圣诞快乐”可可爱爱的我，可开爱爱的她。一切的话题从料理开始，“看书写字画画美食探店烹饪旅行”日语动漫游戏”公主与骑士，完全不一样的世界，骑士无法理解，却是骑士憧憬的梦想。
-
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
@@ -807,29 +461,126 @@
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Talks/">
-                            <span class="chip bg-color">Talks</span>
-                        </a>
-                        
-                        <a href="/tags/Light/">
-                            <span class="chip bg-color">Light</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
-              <!-- 隐藏某个文章 -->
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="Talks, Light" data-aos="fade-up">
+                <div class="card">
+                    <a href="/2024/12/24/5-%E6%A2%A6%E7%9A%84%E7%9B%B8%E6%81%8B/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="梦的开始">
+                            
+                            <span class="card-title">梦的开始</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Flora可可
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="Talks, Light" data-aos="fade-up">
+                <div class="card">
+                    <a href="/2024/12/24/4-%E6%A2%A6%E7%9A%84%E7%9B%B8%E7%9F%A5/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="梦的开始">
+                            
+                            <span class="card-title">梦的开始</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Flora可可
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="Talks, Light" data-aos="fade-up">
+                <div class="card">
+                    <a href="/2024/12/24/3-%E6%A2%A6%E7%9A%84%E7%9B%B8%E8%AF%86/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="梦的开始">
+                            
+                            <span class="card-title">梦的开始</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Flora可可
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="Talks, Light" data-aos="fade-up">
+                <div class="card">
+                    <a href="/2024/12/24/11-%E6%A2%A6%E7%9A%84%E6%B3%A1%E6%B2%AB/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="梦的开始">
+                            
+                            <span class="card-title">梦的开始</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Flora可可
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="Talks, Light" data-aos="fade-up">
                 <div class="card">
                     <a href="/2024/12/24/10-%E4%BB%8E%E6%A2%A6%E5%A2%83%E5%88%B0%E7%88%B1%E6%83%85/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="从梦境到爱情">
@@ -837,14 +588,7 @@
                             <span class="card-title">从梦境到爱情</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                世界上的一切事物都是注定的吗？“大二”梦就从最简单的2个字开始。
-
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
@@ -857,29 +601,14 @@
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Talks/">
-                            <span class="chip bg-color">Talks</span>
-                        </a>
-                        
-                        <a href="/tags/Light/">
-                            <span class="chip bg-color">Light</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
-              <!-- 隐藏某个文章 -->
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="Talks, Light" data-aos="fade-up">
                 <div class="card">
-                    <a href="/2024/12/24/11-%E6%A2%A6%E7%9A%84%E6%B3%A1%E6%B2%AB/">
-                        <div class="card-image">
+                    <a href="/2024/12/24/1-%E6%A2%A6%E7%9A%84%E5%BC%80%E5%A7%8B/">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="梦的开始">
@@ -887,14 +616,7 @@
                             <span class="card-title">梦的开始</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                世界上的一切事物都是注定的吗？“大二”梦就从最简单的2个字开始。
-
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
@@ -907,44 +629,22 @@
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Talks/">
-                            <span class="chip bg-color">Talks</span>
-                        </a>
-                        
-                        <a href="/tags/Light/">
-                            <span class="chip bg-color">Light</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
-              <!-- 隐藏某个文章 -->
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="Talks, Light" data-aos="fade-up">
                 <div class="card">
-                    <a href="/2024/12/24/3-%E6%A2%A6%E7%9A%84%E7%9B%B8%E8%AF%86/">
-                        <div class="card-image">
+                    <a href="/2024/12/24/0-%E5%88%9D%E6%81%8B/">
+                        <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="梦的开始">
+                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="初恋">
                             
-                            <span class="card-title">梦的开始</span>
+                            <span class="card-title">初恋</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                世界上的一切事物都是注定的吗？“大二”梦就从最简单的2个字开始。
-
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
@@ -957,202 +657,12 @@
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Talks/">
-                            <span class="chip bg-color">Talks</span>
-                        </a>
-                        
-                        <a href="/tags/Light/">
-                            <span class="chip bg-color">Light</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/12/24/4-%E6%A2%A6%E7%9A%84%E7%9B%B8%E7%9F%A5/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="梦的开始">
-                            
-                            <span class="card-title">梦的开始</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                世界上的一切事物都是注定的吗？“大二”梦就从最简单的2个字开始。
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Flora可可
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Talks/">
-                            <span class="chip bg-color">Talks</span>
-                        </a>
-                        
-                        <a href="/tags/Light/">
-                            <span class="chip bg-color">Light</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/12/24/5-%E6%A2%A6%E7%9A%84%E7%9B%B8%E6%81%8B/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="梦的开始">
-                            
-                            <span class="card-title">梦的开始</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                世界上的一切事物都是注定的吗？“大二”梦就从最简单的2个字开始。
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Flora可可
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Talks/">
-                            <span class="chip bg-color">Talks</span>
-                        </a>
-                        
-                        <a href="/tags/Light/">
-                            <span class="chip bg-color">Light</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/12/24/6-%E6%A2%A6%E7%9A%84%E7%BA%A0%E7%BC%A0/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="梦的开始">
-                            
-                            <span class="card-title">梦的开始</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                世界上的一切事物都是注定的吗？“大二”梦就从最简单的2个字开始。
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Flora可可
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Talks/">
-                            <span class="chip bg-color">Talks</span>
-                        </a>
-                        
-                        <a href="/tags/Light/">
-                            <span class="chip bg-color">Light</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
             
         </div>
     </article>
-
 </main>
-
-
-<div class="container paging">
-    <div class="row">
-        <div class="col s6 m4 l4">
-            
-            <a class="left btn-floating btn-large disabled">
-                <i class="fas fa-angle-left"></i>
-            </a>
-            
-        </div>
-        <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 2</div>
-        </div>
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/2/"
-               class="right btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            
-        </div>
-    </div>
-</div>
 
 
 
