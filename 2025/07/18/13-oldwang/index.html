@@ -8,8 +8,21 @@
     <meta name="description" content="
     魔幻骰子生成器
     
-&amp;lt;div class=&amp;quot;buttons&amp;quot;&amp;gt;
-    &amp;lt;button id=&amp;quot;generateAll&amp;quot;&amp;gt;全部生成&amp;lt;/button&amp;gt;">
+
+    全部生成
+    逐个生成
+
+
+
+    
+
+
+
+    所有可能结果
+    
+        种族 (1-13): 
+            
+                1. 人类, ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -275,7 +288,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '5dc6a1c040910bd660edebff9930b6a0c9ded2eb99d30efa7b9af72771479807';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -361,68 +374,67 @@
                 <div class="container">
     <h1>魔幻骰子生成器</h1>
     
-<pre><code>&lt;div class=&quot;buttons&quot;&gt;
-    &lt;button id=&quot;generateAll&quot;&gt;全部生成&lt;/button&gt;
-    &lt;button id=&quot;generateOne&quot;&gt;逐个生成&lt;/button&gt;
-&lt;/div&gt;
+<div class="buttons">
+    <button id="generateAll">全部生成</button>
+    <button id="generateOne">逐个生成</button>
+</div>
 
-&lt;div class=&quot;results&quot; id=&quot;resultsContainer&quot;&gt;
-    &lt;!-- 结果将在这里动态生成 --&gt;
-&lt;/div&gt;
+<div class="results" id="resultsContainer">
+    <!-- 结果将在这里动态生成 -->
+</div>
 
-&lt;div class=&quot;all-results&quot;&gt;
-    &lt;h2&gt;所有可能结果&lt;/h2&gt;
-    &lt;div class=&quot;result-list&quot;&gt;
-        &lt;div&gt;&lt;strong&gt;种族 (1-13):&lt;/strong&gt; 
-            &lt;div class=&quot;race-info&quot;&gt;
+<div class="all-results">
+    <h2>所有可能结果</h2>
+    <div class="result-list">
+        <div><strong>种族 (1-13):</strong> 
+            <div class="race-info">
                 1. 人类, 2. 死灵, 3. 普通魔物娘生物, 4. 哥布林, 5. 地狱恶魔, 6. 元素生物, 7. 虚空生物, 
                 8. 精灵, 9. 鱼人, 10. 天使, 11. 鬼, 12. 不定型, 13. 机械
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div&gt;&lt;strong&gt;身高 (100-179):&lt;/strong&gt; 厘米&lt;/div&gt;
-        &lt;!-- &lt;div&gt;&lt;strong&gt;乳量 (1-100):&lt;/strong&gt; &lt;/div&gt;
-        &lt;div&gt;&lt;strong&gt;ASS (1-100):&lt;/strong&gt; &lt;/div&gt;
-        &lt;div&gt;&lt;strong&gt;头发长度 (1-100):&lt;/strong&gt; &lt;/div&gt;
-        &lt;div&gt;&lt;strong&gt;华丽程度 (1-100):&lt;/strong&gt; &lt;/div&gt;
-        &lt;div&gt;&lt;strong&gt;性欲度 (1-100):&lt;/strong&gt; &lt;/div&gt;
-        &lt;div&gt;&lt;strong&gt;体力 (1-100):&lt;/strong&gt; &lt;/div&gt;
-        &lt;div&gt;&lt;strong&gt;魔力 (1-100):&lt;/strong&gt; &lt;/div&gt;
-        &lt;div&gt;&lt;strong&gt;腕力 (1-100):&lt;/strong&gt; &lt;/div&gt;
-        &lt;div&gt;&lt;strong&gt;敏捷 (1-100):&lt;/strong&gt; &lt;/div&gt;
-        &lt;div&gt;&lt;strong&gt;灵巧 (1-100):&lt;/strong&gt; &lt;/div&gt;
-        &lt;div&gt;&lt;strong&gt;话术 (1-100):&lt;/strong&gt; &lt;/div&gt;
-        &lt;div&gt;&lt;strong&gt;智力 (1-100):&lt;/strong&gt; &lt;/div&gt;
-        &lt;div&gt;&lt;strong&gt;运气 (1-100):&lt;/strong&gt; &lt;/div&gt;
-        &lt;div&gt;&lt;strong&gt;家境 (1-100):&lt;/strong&gt; &lt;/div&gt; --&gt;
-        &lt;div&gt;&lt;strong&gt;额外变异 (1-22):&lt;/strong&gt;
-            &lt;div class=&quot;mutation-info&quot;&gt;
-                1. 药水成瘾    【特色发光纹身】 你对药水产生依赖&lt;br&gt;
-                2. 脸部变化    【额外的眼睛或者口部】 你的脸部有变异&lt;br&gt;
-                3. 肌肉变化    【需要腕力时数值减半或翻倍】你感到身体虚弱&lt;br&gt;
-                4. 痴呆    【你是笨蛋】    魔力-，魔力值-&lt;br&gt;
-                5. 生者之敌    【你的存在会激怒生物，各种意义上】    魅力+&lt;br&gt;
-                6. 第三只眼    你额头上长出第三只眼睛。    感知+,魅力值-&lt;br&gt;
-                7. 额外大脑   【长出带脑子的尾巴】 体力减-，灵巧减-，学习+，意志+&lt;br&gt;
-                8. 鳞族    你体表覆盖鳞片。    防御+，速度-&lt;br&gt;
-                9. 蹄变形    你的双脚变成蹄状。    无法穿戴足部装备，速度+,加成上限为100&lt;br&gt;
-                10. 怪异翼    你背后生出一支奇怪材质的翅膀。    获得漂浮能力，无法穿戴背部装备&lt;br&gt;
-                11. 滴溢以太之手    你的双手不断滴落毒液。    毒抗+，徒手攻击附加中毒效果，接触的药水（部分除外）变为有害药水&lt;br&gt;
-                12. 魔力电池    你成为活体法力容器。    魔力抗性+，损坏魔法道具&lt;br&gt;
-                13. 引发重力    你周身产生重力场。    重量+，附近敌人速度-&lt;br&gt;
-                14. 活加湿器    你身边伴随雨云，随时湿身。    所处地图降雨概率显著增加&lt;br&gt;
-                15. 额外肢体 【你有额外的手臂或其他的】&lt;br&gt;
-                16. 触须 【你被奇怪的存在看中，长出触手】&lt;br&gt;
-                17. 奇美拉 【你的部分身体置换为其他生物】&lt;br&gt;
-                18. 暴食 【你的腹部长出不受控制的另一张嘴】&lt;br&gt;
-                19. 骨骼外放 【你的部分骨骼外露，保护身体】&lt;br&gt;
-                20. 厄运缠身 【获得的资金减半，遇到机缘几率提高】&lt;br&gt;
-                21. 肢体缺失 【你缺少部分肢体】&lt;br&gt;
+            </div>
+        </div>
+        <div><strong>身高 (100-179):</strong> 厘米</div>
+        <!-- <div><strong>乳量 (1-100):</strong> </div>
+        <div><strong>ASS (1-100):</strong> </div>
+        <div><strong>头发长度 (1-100):</strong> </div>
+        <div><strong>华丽程度 (1-100):</strong> </div>
+        <div><strong>性欲度 (1-100):</strong> </div>
+        <div><strong>体力 (1-100):</strong> </div>
+        <div><strong>魔力 (1-100):</strong> </div>
+        <div><strong>腕力 (1-100):</strong> </div>
+        <div><strong>敏捷 (1-100):</strong> </div>
+        <div><strong>灵巧 (1-100):</strong> </div>
+        <div><strong>话术 (1-100):</strong> </div>
+        <div><strong>智力 (1-100):</strong> </div>
+        <div><strong>运气 (1-100):</strong> </div>
+        <div><strong>家境 (1-100):</strong> </div> -->
+        <div><strong>额外变异 (1-22):</strong>
+            <div class="mutation-info">
+                1. 药水成瘾    【特色发光纹身】 你对药水产生依赖<br>
+                2. 脸部变化    【额外的眼睛或者口部】 你的脸部有变异<br>
+                3. 肌肉变化    【需要腕力时数值减半或翻倍】你感到身体虚弱<br>
+                4. 痴呆    【你是笨蛋】    魔力-，魔力值-<br>
+                5. 生者之敌    【你的存在会激怒生物，各种意义上】    魅力+<br>
+                6. 第三只眼    你额头上长出第三只眼睛。    感知+,魅力值-<br>
+                7. 额外大脑   【长出带脑子的尾巴】 体力减-，灵巧减-，学习+，意志+<br>
+                8. 鳞族    你体表覆盖鳞片。    防御+，速度-<br>
+                9. 蹄变形    你的双脚变成蹄状。    无法穿戴足部装备，速度+,加成上限为100<br>
+                10. 怪异翼    你背后生出一支奇怪材质的翅膀。    获得漂浮能力，无法穿戴背部装备<br>
+                11. 滴溢以太之手    你的双手不断滴落毒液。    毒抗+，徒手攻击附加中毒效果，接触的药水（部分除外）变为有害药水<br>
+                12. 魔力电池    你成为活体法力容器。    魔力抗性+，损坏魔法道具<br>
+                13. 引发重力    你周身产生重力场。    重量+，附近敌人速度-<br>
+                14. 活加湿器    你身边伴随雨云，随时湿身。    所处地图降雨概率显著增加<br>
+                15. 额外肢体 【你有额外的手臂或其他的】<br>
+                16. 触须 【你被奇怪的存在看中，长出触手】<br>
+                17. 奇美拉 【你的部分身体置换为其他生物】<br>
+                18. 暴食 【你的腹部长出不受控制的另一张嘴】<br>
+                19. 骨骼外放 【你的部分骨骼外露，保护身体】<br>
+                20. 厄运缠身 【获得的资金减半，遇到机缘几率提高】<br>
+                21. 肢体缺失 【你缺少部分肢体】<br>
                 22. 机械化 【部分身体机械化】
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 
 <style>
